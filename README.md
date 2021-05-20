@@ -1,9 +1,9 @@
-# Shinobi CCTV on Raspberry
+# Shinobi CCTV on Raspberry + Docker
 
-This Project refer to https://gitlab.com/Shinobi-Systems/Shinobi/-/tree/master/
+This Project refer to https://gitlab.com/Shinobi-Systems/Shinobi/-/tree/master/ \
+Recommend to use docker because it's very easy to deploy for multiple site
 
-
-## Tested on Raspi3 and Raspi4
+### Tested on Raspi3 and Raspi4
 
 <br>
 <br>
