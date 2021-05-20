@@ -1,0 +1,17 @@
+#Testing Compose For ARM32 Architecture
+
+version: '3.3'
+services:
+    shinobi-cctv:
+        container_name: shinobi-cctv
+        ports:
+            - '8081:8080/tcp'
+        volumes:
+            - /dev/shm/Shinobi/streams:/dev/shm/streams:rw
+            - ~/shinobi-cctv/config:/config:rw
+            - ~/shinobi-cctv/customAutoLoad:/home/Shinobi/libs/customAutoLoad:rw
+            - ~/shinobi-cctv//database:/var/lib/mysql:rw
+            - /mnt/extstorage/shinobi-cctv/videos:/home/Shinobi/videos:rw
+            - ~/shinobi-cctv//plugins:/home/Shinobi/plugins:rw
+            - /etc/localtime:/etc/localtime:ro
+        image: 'shinobi-arm32:latest'

@@ -1,0 +1,16 @@
+# Example Docker Compose
+version: '3.3'
+services:
+    shinobi:
+        container_name: Shinobi
+        ports:
+            - '8080:8080/tcp'
+        volumes:
+            - '/dev/shm/Shinobi/streams:/dev/shm/streams:rw'
+            - '$HOME/Shinobi/config:/config:rw'
+            - '$HOME/Shinobi/customAutoLoad:/home/Shinobi/libs/customAutoLoad:rw'
+            - '$HOME/Shinobi/database:/var/lib/mysql:rw'
+            - '$HOME/Shinobi/videos:/home/Shinobi/videos:rw'
+            - '$HOME/Shinobi/plugins:/home/Shinobi/plugins:rw'
+            - '/etc/localtime:/etc/localtime:ro'
+        image: 'shinobisystems/shinobi:latest'

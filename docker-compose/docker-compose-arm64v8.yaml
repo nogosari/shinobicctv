@@ -1,0 +1,16 @@
+#Testing Compose For ARM64 Architecture
+version: '3.3'
+services:
+    shinobi-arm64:
+        container_name: shinobi-arm64
+        ports:
+            - '8082:8080/tcp'
+        volumes:
+            - /dev/shm/shinobi-arm64v8/streams:/dev/shm/streams:rw
+            - ~/shinobi-arm64v8/config:/config:rw
+            - ~/shinobi-arm64v8/customAutoLoad:/home/Shinobi/libs/customAutoLoad:rw
+            - ~/shinobi-arm64v8/database:/var/lib/mysql:rw
+            - /mnt/extstorage/shinobi-arm64v8/videos:/home/Shinobi/videos:rw
+            - ~/shinobi-arm64v8/plugins:/home/Shinobi/plugins:rw
+            - /etc/localtime:/etc/localtime:ro
+        image: 'shinobi-arm64v8:latest'
